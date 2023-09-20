@@ -64,7 +64,7 @@ public class Order {
         return Objects.hash(id);
     }
 
-    public Double total(){
-    }
+   // public Double total(){
+   // }
 
 }
