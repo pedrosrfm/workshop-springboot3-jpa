@@ -1,25 +1,34 @@
 package com.example.demo.entities;
 
 import com.example.demo.entities.enums.OrderStatus;
+import jakarta.persistence.*;
 
+import java.io.Serializable;
+import java.time.Instant;
 import java.util.Date;
 import java.util.Objects;
 
-public class Order {
 
+@Entity
+@Table(name = "tb_order")
+public class Order implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private Date moment;
+    private Instant moment;
     private OrderStatus orderStatus;
 
+    @ManyToOne
+    @JoinColumn(name = "client_id")
     private User client;
 
     public Order(){
     }
 
-    public Order(Integer id, Date moment, OrderStatus orderStatus, User client) {
+    public Order(Integer id, Instant moment, User client) {
         this.id = id;
         this.moment = moment;
-        this.orderStatus = orderStatus;
         this.client = client;
     }
 
@@ -31,11 +40,11 @@ public class Order {
         this.id = id;
     }
 
-    public Date getMoment() {
+    public Instant getMoment() {
         return moment;
     }
 
-    public void setMoment(Date moment) {
+    public void setMoment(Instant moment) {
         this.moment = moment;
     }
 
