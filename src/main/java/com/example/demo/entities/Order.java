@@ -96,7 +96,12 @@ public class Order implements Serializable {
         return Objects.hash(id);
     }
 
-   // public Double total(){
-   // }
+    public Double getTotal(){
+        double sum = 0;
+        for (OrderItem items : items){
+           sum += items.getSubTotal();
+        }
+        return sum;
+    }
 
 }
