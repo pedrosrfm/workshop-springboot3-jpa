@@ -1,19 +1,33 @@
 package com.example.demo.entities;
 
+import jakarta.persistence.*;
+
+import java.io.Serializable;
+import java.time.Instant;
 import java.util.Date;
 import java.util.Objects;
 
-public class Payment {
+@Entity
+@Table(name = "tb_payment")
+public class Payment implements Serializable {
+    private static final long serialversionUID = 1L;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private Date moment;
+    private Instant moment;
+
+    @OneToOne
+    @MapsId
+    private Order order;
 
     public Payment(){
     }
 
-    public Payment(Integer id, Date moment) {
+    public Payment(Integer id, Instant moment, Order order) {
         this.id = id;
         this.moment = moment;
+        this.order = order;
     }
 
     public Integer getId() {
@@ -24,14 +38,20 @@ public class Payment {
         this.id = id;
     }
 
-    public Date getMoment() {
+    public Instant getMoment() {
         return moment;
     }
 
-    public void setMoment(Date moment) {
+    public void setMoment(Instant moment) {
         this.moment = moment;
     }
 
+    public Order getOrder() {
+        return order;
+    }
+    public void setOrder(Order order) {
+        this.order = order;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
