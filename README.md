@@ -16,5 +16,5 @@ This is a small project made with the intention of learning and practicing Sprin
 ## Layers
 ![Layers](https://github.com/pedrosrfm/workshop-springboot3-jpa/blob/main/assets/layers.png)
 
-## My Linkedin
+## My LinkedIn
 https://www.linkedin.com/in/pedro-serafim-444157203/
