@@ -16,5 +16,45 @@ This is a small project made with the intention of learning and practicing Sprin
 ## Layers
 ![Layers](https://github.com/pedrosrfm/workshop-springboot3-jpa/blob/main/assets/layers.png)
 
+## Code snippets
+### Object requests
+#### Product
+
+```json
+  {
+        "id": 1,
+        "name": "The Lord of the Rings",
+        "description": "Lorem ipsum dolor sit amet, consectetur.",
+        "price": 90.5,
+        "imgUrl": "",
+        "categories": [
+            {
+                "id": 2,
+                "name": "Books"
+            }
+        ]
+  }
+```
+#### Users
+```json
+[
+    {
+        "id": 1,
+        "name": "Maria Brown",
+        "email": "maria@gmail.com",
+        "phone": "988888888",
+        "password": "123456"
+    },
+    {
+        "id": 2,
+        "name": "Alex Green",
+        "email": "alex@gmail.com",
+        "phone": "977777777",
+        "password": "123456"
+    }
+]
+```
+
+
 ## My LinkedIn
 https://www.linkedin.com/in/pedro-serafim-444157203/
