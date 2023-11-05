@@ -18,7 +18,7 @@ This is a small project made with the intention of learning and practicing Sprin
 
 ## Code snippets
 ### Object requests
-#### Product
+#### Products
 
 ```json
   {
@@ -53,6 +53,82 @@ This is a small project made with the intention of learning and practicing Sprin
         "password": "123456"
     }
 ]
+```
+#### Categories
+```json
+[
+    {
+        "id": 1,
+        "name": "Electronics"
+    },
+    {
+        "id": 2,
+        "name": "Books"
+    },
+    {
+        "id": 3,
+        "name": "Computers"
+    }
+]
+```
+
+#### Orders
+```json
+ {
+        "id": 1,
+        "moment": "2019-06-20T19:53:07Z",
+        "orderStatus": "PAID",
+        "client": {
+            "id": 1,
+            "name": "Maria Brown",
+            "email": "maria@gmail.com",
+            "phone": "988888888",
+            "password": "123456"
+        },
+        "items": [
+            {
+                "quantity": 2,
+                "price": 90.5,
+                "product": {
+                    "id": 1,
+                    "name": "The Lord of the Rings",
+                    "description": "Lorem ipsum dolor sit amet, consectetur.",
+                    "price": 90.5,
+                    "imgUrl": "",
+                    "categories": [
+                        {
+                            "id": 2,
+                            "name": "Books"
+                        }
+                    ]
+                },
+                "subTotal": 181.0
+            },
+            {
+                "quantity": 1,
+                "price": 1250.0,
+                "product": {
+                    "id": 3,
+                    "name": "Macbook Pro",
+                    "description": "Nam eleifend maximus tortor, at mollis.",
+                    "price": 1250.0,
+                    "imgUrl": "",
+                    "categories": [
+                        {
+                            "id": 3,
+                            "name": "Computers"
+                        }
+                    ]
+                },
+                "subTotal": 1250.0
+            }
+        ],
+        "payment": {
+            "id": 1,
+            "moment": "2019-06-20T21:53:07Z"
+        },
+        "total": 1431.0
+    }
 ```
 
 
